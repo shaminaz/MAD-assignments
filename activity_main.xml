@@ -1,73 +1,131 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="UTF-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F2CEBDBD"
-    android:orientation="vertical"
+    android:background="#92B966"
     tools:context=".MainActivity">
-
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_margin="16dp"
-        android:src="@android:drawable/ic_btn_speak_now" />
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="400dp"
-        android:layout_height="192dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="263dp"
-        android:text="Demo of Relative Layout"
-        android:textAllCaps="true"
-        android:textColor="#F8AD1111"
-        android:textSize="50dp" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="GOPALAN MOVIE COMPLEX"
+        android:textColor="#F8070000"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.059" />
 
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tlyt"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+    <EditText
+        android:id="@+id/seatNumber"
+        android:layout_width="277dp"
+        android:layout_height="41dp"
+        android:ems="10"
+        android:hint="Number"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.477"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.14" />
 
-        <com.google.android.material.tabs.TabItem
-            android:id="@+id/rl"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="RelativeLayout" />
+    <EditText
+        android:id="@+id/showName"
+        android:layout_width="277dp"
+        android:layout_height="41dp"
+        android:ems="10"
+        android:hint="Movie Name"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.41" />
 
-        <com.google.android.material.tabs.TabItem
-            android:id="@+id/cl"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Constraint Layout" />
+    <EditText
+        android:id="@+id/showTime"
+        android:layout_width="277dp"
+        android:layout_height="41dp"
+        android:ems="10"
+        android:hint="Timing of show"
+        android:inputType="datetime"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.314" />
 
-        <com.google.android.material.tabs.TabItem
-            android:id="@+id/ll"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="linear layout" />
+    <EditText
+        android:id="@+id/bookinginnameof"
+        android:layout_width="277dp"
+        android:layout_height="41dp"
+        android:ems="10"
+        android:hint="UserName"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.223" />
 
-        <com.google.android.material.tabs.TabItem
-            android:id="@+id/fl"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="frame layout" />
+    <Button
+        android:id="@+id/bookTicket"
+        android:layout_width="201dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:background="#F5070505"
+        android:text="Book Ticket"
+        android:textColor="#FAF5F4F4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.513" />
 
-        <com.google.android.material.tabs.TabItem
-            android:id="@+id/tl"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Table Layout" />
-    </com.google.android.material.tabs.TabLayout>
+    <Button
+        android:id="@+id/cancetTicket"
+        android:layout_width="413dp"
+        android:layout_height="42dp"
+        android:background="#FD090707"
+        android:text="Cancel Ticket"
+        android:textColor="#FDFFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.669" />
 
-    <androidx.viewpager.widget.ViewPager
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/vp"/>
+    <Button
+        android:id="@+id/showTickets"
+        android:layout_width="183dp"
+        android:layout_height="47dp"
+        android:background="#FC020101"
+        android:text="Show"
+        android:textColor="#F2FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.516" />
 
-</RelativeLayout>
+    <TextView
+        android:id="@+id/listTickets"
+        android:layout_width="394dp"
+        android:layout_height="215dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.994" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
