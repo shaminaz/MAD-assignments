@@ -1,43 +1,73 @@
-package com.example.assign4;
+package com.example.assign05;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager.widget.PagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.view.View;
+import android.widget.Toast;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.tabs.TabItem;
+import com.google.android.material.tabs.TabLayout;
 
 public class MainActivity extends AppCompatActivity {
-
+    private TabLayout tabLayout;
+    private ViewPager viewPager;
+    private TabItem t1,t2,t3,t4,t5;
+    public PagerAdapter pagerAdapter;
+FloatingActionButton fab;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-    }
-    public boolean onCreateOptionsMenu(Menu menu)
-    {
-        getMenuInflater().inflate(R.menu.menu,menu);
-        return true;
-    }
-    public boolean onOptionsItemSelected(MenuItem menuItem)
-    {
-        switch(menuItem.getItemId()){
 
-            case R.id.black:
-                Intent intent=new Intent(MainActivity.this,black.class);
-                startActivity(intent);
-                return true;
-            case R.id.red:
-                Intent intent1=new Intent(MainActivity.this,red.class);
-                startActivity(intent1);
-                return true;
-            case R.id.yellow:
-                Intent intent2=new Intent(MainActivity.this,yellow.class);
-                startActivity(intent2);
-                return true;
-            default:
-                super.onOptionsItemSelected(menuItem);
-        }
-        return true;
+        tabLayout=(TabLayout) findViewById(R.id.tlyt);
+        t1=(TabItem) findViewById(R.id.rl);
+        t2=(TabItem) findViewById(R.id.cl);
+        t3=(TabItem) findViewById(R.id.ll);
+        t4=(TabItem) findViewById(R.id.fl);
+        t5=(TabItem) findViewById(R.id.tl);
+        viewPager=(ViewPager) findViewById(R.id.vp);
+        pagerAdapter=new PageAdapter(getSupportFragmentManager(),tabLayout.getTabCount());
+        viewPager.setAdapter(pagerAdapter);
+        tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                viewPager.setCurrentItem(tab.getPosition());
+                if(tab.getPosition() == 0) {
+                    pagerAdapter.notifyDataSetChanged();
+                } else if(tab.getPosition() == 1) {
+                    pagerAdapter.notifyDataSetChanged();
+                }      else if(tab.getPosition() == 2) {
+                    pagerAdapter.notifyDataSetChanged();
+                }           else if(tab.getPosition() == 3) {
+                    pagerAdapter.notifyDataSetChanged();
+                }              else if(tab.getPosition() == 4){
+                                    pagerAdapter.notifyDataSetChanged();
+                }
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
+
+        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+        fab=findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this,"Floating Button Clicked",Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
 }
